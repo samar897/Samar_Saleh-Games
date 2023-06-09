@@ -9,10 +9,14 @@
 //import ToggleColorMode from "./assets/component/ToggleColorMode";
 //import { Link } from 'react-router-dom';
 
+import { React, useState } from "react";
+import List from "./List"
+
+
 import {
-  Box,SimpleGrid,
-} from '@chakra-ui/react'
-import React from "react";
+  Box,SimpleGrid,HStack,InputGroup, InputLeftElement,Input
+} from '@chakra-ui/react'   
+
 import Footer from "./Footer";
 import Nav from "./Nav";
 //import Home from "./Home"; 
@@ -20,21 +24,40 @@ import Nav from "./Nav";
 //import Display1 from "./assets/component/Display1";
 import Card from '../component/Card'
 
+import {
+  AiOutlineSearch,
 
+} from "react-icons/ai";
 
 
 //<Route path="/*" element={<p> the page not found </p>}></Route>
 
 
 export default function Home() {
-
+  const [inputText, setInputText] = useState("");
+  let inputHandler = (e) => {
+    //convert input text to lower case
+    let lowerCase = e.target.value.toLowerCase();
+    setInputText(lowerCase); };
 
   
-  return (
+  return (    
 
     <Box>
 
     <Nav home="Home Page" logout="Sign out"></Nav>
+
+    <HStack spacing={3} alignItems="center">
+          <InputGroup display={{ base: "none", lg: "block" }} ml="auto">
+            <InputLeftElement pointerEvents="none">
+              <AiOutlineSearch />
+              
+            </InputLeftElement>
+            <Input type="tel" placeholder="Search..." onChange={inputHandler} />
+          </InputGroup>
+        </HStack>
+        <List input={inputText} />
+ 
 
     <SimpleGrid columns={3} spacingX='40px' spacingY='20px' >
 
@@ -50,13 +73,11 @@ export default function Home() {
 
      
 
-    <Card name="Shadow of the Tomb Raider" Dis="survive and thrive in the deadliest place on Earth: master an unforgiving jungle setting in order to survive. Explore underwater environments filled with crevasses and deep tunnel systems" img={"https://m.media-amazon.com/images/I/917q49DeTgL._AC_SL1500_.jpg"} item1={"Definitive Edition"} item2={"Open World"}></Card>
-
-    <Card name="Horizon Forbidden West" Dis="In war-torn tsushima, ancient beauty endures: in this open-world action adventure, you'll roam vast countryside and expansive terrain to encounter rich characters, discover ancient landmarks, and uncover the hidden beauty of tsushima."
-     img={"https://m.media-amazon.com/images/I/81WLMsIZF5L._AC_SL1500_.jpg"} 
+    <Card name="Shadow of the Tomb Raider" Dis="orgiving jungle setting in order to survive. Explore underwater environments filled with crevasses and deep tunnel systems" img={"https://m.media-amazon.com/images/I/917q49DeTgL._AC_SL1500_.jpg"} item1={"Definitive Edition"} item2={"Open World"}></Card>
+    <Card name="Horizon Forbidden West" Dis="Brave an expansive open world - discover distant lands, new enemies, rich cultures and striking characters" img={"https://m.media-amazon.com/images/I/81WLMsIZF5L._AC_SL1500_.jpg"} item1={"PS4 and More"} item2={"Open World"}></Card>
+    <Card name="Ghost of Tsushima" Dis="Brave an expansive open world - discover distant lands, new enemies, rich cultures and striking characters" 
+    img={"https://m.media-amazon.com/images/I/81XPzboI34S._SL1500_.jpg"}
      item1={"Japanese Game"} item2={"Traditional"} ></Card>
-
-     <Card name="Horizon Forbidden West" Dis="Brave an expansive open world - discover distant lands, new enemies, rich cultures and striking characters" img={"https://m.media-amazon.com/images/I/81WLMsIZF5L._AC_SL1500_.jpg"} item1={"PS4 and More"} item2={"Open World"}></Card>
 
      
      <Card name="Crash Bandicoot N.Sane Trilogy" Dis="Experience N. Tense Platforming, Epic Challenges & Adventures" img={"https://m.media-amazon.com/images/I/71UtDDAfxBL._AC_SL1500_.jpg"} item1={"3 Full Games"} item2={"100+ Levels & 2 Playable Characters"}></Card>

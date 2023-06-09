@@ -12,11 +12,19 @@ import {
   Input,
 } from "@chakra-ui/react";
 
+import { useLocalStorage } from "../component/useLocalStorage";
 import Nav from "../component/Nav";
 import Footer from "../component/Footer";
 import Home from "../component/Home"; 
 
 export default function Register(props){
+
+
+  const [name, setName] = useLocalStorage("name", "");
+  const [email, setEmail] = useLocalStorage("email", "");
+  const [password, setPassword] = useLocalStorage("passwordF", "");
+  const [checked, setChecked] = useLocalStorage("checked", false);
+
   return (
 <Box>
 <Nav register="Register" login="Login" ></Nav>
@@ -50,11 +58,10 @@ export default function Register(props){
             color="gray.500"
             letterSpacing="wider"
           >
-          A car store is a retail establishment that sells new and used cars.
-           Car stores typically have a large selection of cars to choose from, 
-           and they offer a variety of financing options to make it easier for customers to purchase a car.
-            Car stores also offer a variety of services,
-           such as car repair, car maintenance, and car detailing.
+          Video games are a form of interactive entertainment that involves players controlling characters to accomplish
+           goals within a virtual world. They can be played on a variety of devices, including computers, 
+           consoles, and mobile phones. Video games come in a wide variety of genres, including action,
+           adventure, puzzle, role-playing, and sports. They can be played for entertainment, competition, or education.
           </chakra.p>
         </GridItem>
         <GridItem colSpan={{ base: "auto", md: 4 }}>
@@ -72,16 +79,28 @@ export default function Register(props){
               _dark={{ color: "white" }}
             >
               <Flex>
-                <VisuallyHidden>First Name</VisuallyHidden>
-                <Input mt={0} type="text" placeholder="First Name" />
+                <VisuallyHidden>Name</VisuallyHidden>
+                <Input mt={3} type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full name"
+                aria-label="fullname" id="name" />
               </Flex>
               <Flex>
                 <VisuallyHidden>Email Address</VisuallyHidden>
-                <Input mt={0} type="email" placeholder="Email Address" />
+                <Input mt={0} type="email" placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+
+                aria-label="Email" id="email" isRequired />
               </Flex>
               <Flex>
                 <VisuallyHidden>Password</VisuallyHidden>
-                <Input mt={0} type="password" placeholder="Password" />
+                <Input mt={4} type="password" placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+
+                aria-label="password" id="password" isRequired />
               </Flex>
               <Button 
               variant="solid"
@@ -92,6 +111,14 @@ export default function Register(props){
                 Sign up for free
               </Button>
             </SimpleGrid>
+            <label>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(e) => setChecked(e.target.checked)}
+        />{" "}
+        Not a robot?
+         </label>
             <Flex px={6} py={4}>
               <Button
                 py={2}

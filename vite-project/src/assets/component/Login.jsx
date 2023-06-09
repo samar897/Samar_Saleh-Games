@@ -59,9 +59,7 @@ import React, { useState } from 'react';
   
     const handlePasswordVisibility = () => setShowPassword(!showPassword);
 
-
     return (
-
 
   <Box>
 
@@ -125,9 +123,9 @@ import React, { useState } from 'react';
               onChange={event => setPassword(event.currentTarget.value)}
             />
             <InputRightElement width="3rem">
-    <Button h="1.5rem" size="sm" onClick={handlePasswordVisibility}>
+      <Button h="1.5rem" size="sm" onClick={handlePasswordVisibility}>
       {showPassword ? <Icon name="view-off" /> : <Icon name="view" />}
-    </Button>
+        </Button>
      </InputRightElement>
             </InputGroup>
             </FormControl>
@@ -149,7 +147,6 @@ import React, { useState } from 'react';
               width="full"
               mt={4}
             >
-            
             {isLoading ? (
               <CircularProgress isIndeterminate size="24px" color="teal" />
             ) : (
