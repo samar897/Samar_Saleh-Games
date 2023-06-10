@@ -12,15 +12,11 @@ import {
   VStack,
   IconButton,
   CloseButton,
-  InputGroup,
-  InputLeftElement,
-  Input,
   Tabs,
   TabList,
   Tab,
   Spacer,
 } from "@chakra-ui/react";
-
 
 
 //import Register from "../component/Register";
@@ -30,7 +26,6 @@ import { Link } from 'react-router-dom';
 import {
   AiOutlineMenu,
   AiOutlineInbox,
-  AiOutlineSearch,
   AiFillBell,
 } from "react-icons/ai";
 
@@ -170,24 +165,30 @@ export default function Nav(props){
       >
         <Tabs defaultIndex={1} borderBottomColor="transparent">
           <TabList>
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
+            <Tab py={4} m={0} _focus={{ boxShadow: "none" }} _dark={{ color:"white", bg:'#1A202C', border:"3px solid #006A7B"}}>
             <Link to="/" >{props.home}</Link> 
             </Tab>
      
-            <Tab py={4} m={0} _focus={{ boxShadow: "none" }}>
-            <Link to="/" >{props.logout}</Link> 
-            </Tab>
-
+            
           </TabList>
         </Tabs>
         <Spacer />
         <HStack spacing={3} alignItems="center">
-          <InputGroup display={{ base: "none", lg: "block" }} ml="auto">
-            <InputLeftElement pointerEvents="none">
-              <AiOutlineSearch />
-            </InputLeftElement>
-            <Input type="tel" placeholder="Search..." />
-          </InputGroup>
+        <Button
+        w="full"
+        variant="solid"
+        colorScheme="whiteAlpha"
+        _dark={{ color:"white", bg:'#1A202C', border:"3px solid #006A7B"}}
+
+        border="3px solid #5CA0AB" margin={5}
+        leftIcon={<AiOutlineInbox />}
+        bg="#006A7B"
+        color={"white"}
+      >
+      <Link to="/ListSearch" > Search </Link>
+
+      </Button>
+           
         </HStack>
       </Flex>
     </Box>

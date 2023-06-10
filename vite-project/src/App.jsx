@@ -6,11 +6,13 @@ import RouterOutlet from './assets/component/RouterOutlet';
 function App() {
 
   return ( 
-
+    
 <Box>
 
 
-<RouterOutlet></RouterOutlet>
+<RouterOutlet>
+
+</RouterOutlet>
 
 </Box>
 

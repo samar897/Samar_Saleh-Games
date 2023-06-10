@@ -7,8 +7,10 @@ import Login from "./Login";
 import Register from "./Register"; 
 
 import { Box } from '@chakra-ui/react';
+import SearchList from "./SearchList";
 
-import React from 'react';
+//import React from 'react';
+import Search from "./Search";
 
 
 import {Route, Routes,Outlet } from 'react-router-dom';
@@ -17,6 +19,8 @@ import {Route, Routes,Outlet } from 'react-router-dom';
 import Images11 from '../component/IBM.jpg'
 import SDAIA from '../component/SDAIA.jpg'
 import Photo from '../component/photo1.jpg'*/
+//import Home2 from "./Home2";
+import ListSearch from "./ListSearch";
 
 export default function RouterOutlet() {
 
@@ -30,6 +34,9 @@ export default function RouterOutlet() {
 <Route path="/login" element={<Login/>}></Route>
 <Route path="/logout" element={<Login/>}></Route>
 <Route path="/*" element={<Notfound/>}></Route>
+<Route path="*" element={<Notfound/>}></Route>
+<Route path="/ListSearch" element={<ListSearch/>}></Route>
+
 
 
  <Route path="/home" element={
@@ -51,3 +58,6 @@ export default function RouterOutlet() {
 </Box>
   )
 }
+/*
+<Route path="/SearchList" element={<SearchList/>}></Route>
+<Route path="/Search" element={<Search/>}></Route>*/

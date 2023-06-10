@@ -24,21 +24,12 @@ import Nav from "./Nav";
 //import Display1 from "./assets/component/Display1";
 import Card from '../component/Card'
 
-import {
-  AiOutlineSearch,
-
-} from "react-icons/ai";
 
 
 //<Route path="/*" element={<p> the page not found </p>}></Route>
 
 
 export default function Home() {
-  const [inputText, setInputText] = useState("");
-  let inputHandler = (e) => {
-    //convert input text to lower case
-    let lowerCase = e.target.value.toLowerCase();
-    setInputText(lowerCase); };
 
   
   return (    
@@ -47,24 +38,15 @@ export default function Home() {
 
     <Nav home="Home Page" logout="Sign out"></Nav>
 
-    <HStack spacing={3} alignItems="center">
-          <InputGroup display={{ base: "none", lg: "block" }} ml="auto">
-            <InputLeftElement pointerEvents="none">
-              <AiOutlineSearch />
-              
-            </InputLeftElement>
-            <Input type="tel" placeholder="Search..." onChange={inputHandler} />
-          </InputGroup>
-        </HStack>
-        <List input={inputText} />
- 
-
+    
     <SimpleGrid columns={3} spacingX='40px' spacingY='20px' >
 
 
     <Card name="Assassin's Creed Origins (PS4)" Dis="The Discovery Tour by Assassin’s Creed: Ancient Egypt is available now as a free update!Ancient Egypt, a land of majesty and intrigue, is disappearing in a ruthless fight for power. " 
     img={"https://m.media-amazon.com/images/I/71H3F4vqPIS._SX425_.jpg"}
-     item1={"Assassin"} item2={"PlayStation 4"}></Card>
+     item1={"Assassin"} item2={"PlayStation 4"} ></Card>
+
+
 
     <Card name="Hogwarts Legacy" Dis="Hogwarts Legacy is an open-world action RPG set in the world introduced in the Harry Potter books; Explore and discover magical beasts, customize your character and craft potions, master spell casting, upgrade talents and become the wizard you want to be"
      img={"https://m.media-amazon.com/images/I/812H5hRw6TL._AC_SL1500_.jpg"} 
@@ -80,10 +62,10 @@ export default function Home() {
      item1={"Japanese Game"} item2={"Traditional"} ></Card>
 
      
-     <Card name="Crash Bandicoot N.Sane Trilogy" Dis="Experience N. Tense Platforming, Epic Challenges & Adventures" img={"https://m.media-amazon.com/images/I/71UtDDAfxBL._AC_SL1500_.jpg"} item1={"3 Full Games"} item2={"100+ Levels & 2 Playable Characters"}></Card>
+  <Card name="Crash Bandicoot N.Sane Trilogy" Dis="Experience N. Tense Platforming, Epic Challenges & Adventures" img={"https://m.media-amazon.com/images/I/71UtDDAfxBL._AC_SL1500_.jpg"} item1={"3 Full Games"} item2={"100+ Levels & 2 Playable Characters"}></Card>
 
 
-    </SimpleGrid>
+  </SimpleGrid>
   <Footer></Footer>
 
 
@@ -92,3 +74,4 @@ export default function Home() {
 
   )
 }
+

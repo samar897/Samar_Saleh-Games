@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
-import data from "./ListData.json"
+import data from "./initialDetails"
+import Home from './Home';
 
 function List(props) {
     //create a new array by filtering the original array
