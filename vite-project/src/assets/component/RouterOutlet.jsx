@@ -29,17 +29,19 @@ export default function RouterOutlet() {
 <Box>
 
 <Routes>
-<Route path="/" element={<Home/>}></Route>
+<Route path="/" element={<Login/>}></Route>
 <Route path="/register" element={<Register/>}></Route>
+<Route path="/login/ListSearch" element={<ListSearch/>}></Route>
 <Route path="/login" element={<Login/>}></Route>
 <Route path="/logout" element={<Login/>}></Route>
 <Route path="/*" element={<Notfound/>}></Route>
 <Route path="*" element={<Notfound/>}></Route>
-<Route path="/ListSearch" element={<ListSearch/>}></Route>
 
 
 
- <Route path="/home" element={
+
+
+ <Route path="/login/home" element={
       
       <Box>
    

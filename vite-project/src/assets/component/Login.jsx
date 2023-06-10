@@ -62,10 +62,9 @@ import React, { useState } from 'react';
     return (
 
   <Box>
-
     {isLoggedIn ? (
       <Box textAlign="center">
-      <Home></Home>
+      <Home ></Home>
         <Button
           variantColor="orange"
           variant="outline"

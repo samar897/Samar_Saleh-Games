@@ -185,7 +185,8 @@ export default function Nav(props){
         bg="#006A7B"
         color={"white"}
       >
-      <Link to="/ListSearch" > Search </Link>
+      
+      <Link to="/login/ListSearch" > Search </Link>
 
       </Button>
            
